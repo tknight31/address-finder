@@ -38,14 +38,13 @@ class ResultsContainer extends Component {
   retrieveAddress = id => {
     const fetchUrl = `http://api.addressy.com/Capture/Interactive/Retrieve/v1.00/json3.ws?Key=TJ14-UK74-BG59-BB49&Id=${id}`;
 
+    this.setState({
+      searchResults: []
+    });
+
     fetch(fetchUrl)
       .then(res => res.json())
-      .then(
-        json => console.log(json)
-        // this.setState({
-        //   searchResults: json.Items
-        // })
-      );
+      .then(json => this.props.getLatLong(json.Items[0]));
   };
 
   render() {

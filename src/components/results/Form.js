@@ -9,7 +9,8 @@ class Form extends Component {
     this.setState({
       addressInput: event.target.value
     });
-    this.props.formSubmit(this.state.addressInput);
+
+    setTimeout(this.props.formSubmit(this.state.addressInput), 2000);
   };
 
   handleSubmit = event => {
@@ -25,6 +26,7 @@ class Form extends Component {
             type="text"
             onChange={this.handleInputChange}
             value={this.state.addressInput}
+            placeholder="Enter address..."
           />
         </form>
       </div>
