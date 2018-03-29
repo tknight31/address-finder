@@ -50,6 +50,15 @@
   box-sizing: border-box;
 }
 
+.side-result {
+  cursor: pointer;
+  margin: 3px auto;
+}
+
+.side-result:hover {
+  font-weight: bold
+}
+
 .main-container {
   flex: 1 100%;
 }
@@ -59,6 +68,8 @@
   max-width: 100%;
   height:1200px;
 }
+
+
 
 
 

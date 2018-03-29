@@ -38,10 +38,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title" />
         </header>
         <div className="main-wrapper">
-          <SideNav recentSearches={this.state.recentSearches} />
+          <SideNav
+            recentSearches={this.state.recentSearches}
+            getLatLong={this.getLatLong}
+          />
           <div className="main-container">
             <div>
               <ResultsContainer getLatLong={this.getLatLong} />

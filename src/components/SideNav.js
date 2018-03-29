@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import SideResultItem from "./results/SideResultItem";
 
 class SideNav extends Component {
   render() {
     console.log(this.props.recentSearches);
     const addresses = this.props.recentSearches.map(address => (
-      <div>{address.Line1}</div>
+      <SideResultItem getLatLong={this.props.getLatLong} address={address} />
     ));
     return (
       <div className="side-nav">
