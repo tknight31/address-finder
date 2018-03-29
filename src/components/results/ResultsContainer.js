@@ -8,19 +8,25 @@ class ResultsContainer extends Component {
   };
 
   searchAddresses = term => {
-    const fetchUrl =
-      "http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=TJ14-UK74-BG59-BB49&Text=" +
-      term +
-      "&Limit=10&Language=";
+    if (term) {
+      const fetchUrl =
+        "http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=TJ14-UK74-BG59-BB49&Text=" +
+        term +
+        "&Limit=10&Language=";
 
-    fetch(fetchUrl)
-      .then(res => res.json())
-      //   .then(json => console.log(json.Items));
-      .then(json =>
-        this.setState({
-          searchResults: json.Items
-        })
-      );
+      fetch(fetchUrl)
+        .then(res => res.json())
+        //   .then(json => console.log(json.Items));
+        .then(json =>
+          this.setState({
+            searchResults: json.Items
+          })
+        );
+    } else {
+      this.setState({
+        searchResults: []
+      });
+    }
   };
 
   searchById = id => {

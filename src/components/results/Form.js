@@ -10,7 +10,7 @@ class Form extends Component {
       addressInput: event.target.value
     });
 
-    setTimeout(this.props.formSubmit(this.state.addressInput), 2000);
+    this.props.formSubmit(event.target.value);
   };
 
   handleSubmit = event => {
